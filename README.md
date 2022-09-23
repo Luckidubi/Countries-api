@@ -49,6 +49,13 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
+### Next task to do:
+- Create the Country Details mockup page
+- Add Country Search feature
+- Add Country Filter feature
+- Add Router and Routes feature
+- Add complete the light and dark theme feature.
+- Refactor code
 
 ### Built with
 
