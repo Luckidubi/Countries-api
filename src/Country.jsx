@@ -1,9 +1,8 @@
 import { Box, Image} from '@chakra-ui/react'
-import { useColorModeValue } from '@chakra-ui/react'
+import {ElemBg, textColor} from './style'
 
 export default function Country(){
-  const ElemBg = useColorModeValue('hsl(0, 0%, 100%)','hsl(209, 23%, 22%)')
-  const textColor = useColorModeValue('hsl(200, 15%, 8%)','hsl(0, 0%, 100%)')
+  
 
   return (
     <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'

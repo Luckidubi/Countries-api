@@ -7,7 +7,7 @@ export default function SearchFilter(){
   return(
      <Flex justify="space-between"
        sx={{
-    '@media screen and (max-width: 440px)': {
+    '@media screen and (max-width: 760px)': {
       flexDirection: 'column',
       maxW: 'lg'
     },

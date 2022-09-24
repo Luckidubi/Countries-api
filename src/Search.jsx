@@ -1,17 +1,16 @@
 import { Input, InputGroup, InputLeftElement, Box } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
-import { useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { useColorMode } from '@chakra-ui/react'
+import {ElemBg} from './style'
 
 export default function Search(){
 
   const {colorMode} = useColorMode()
-
-  const bg = useColorModeValue('hsl(0, 0%, 98%)', 'hsl(207, 26%, 17%)')
  
   
   return (
     
-    <Box m={5} rounded="md" bg="hsl(0, 0%, 100%)" maxW="md">
+    <Box m={5} rounded="md" bg={ElemBg} maxW="md">
     <InputGroup>
     <InputLeftElement
       pointerEvents='none'

@@ -4,6 +4,7 @@ import Filter from "./Filter"
 import SearchFilter from "./SearchFilter"
 import {Container} from '@chakra-ui/react'
 import CountryList from './CountryList'
+import Details from './Details'
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Container maxW="1440px">
       <SearchFilter/>
       <CountryList/>
+        <Details/>
         </Container>
     </main>
   )

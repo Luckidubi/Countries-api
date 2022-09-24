@@ -50,7 +50,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 ### Next task to do:
-- Create the Country Details mockup page
+
 - Add Country Search feature
 - Add Country Filter feature
 - Add Router and Routes feature
