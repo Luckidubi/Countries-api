@@ -1,19 +1,24 @@
 import { Box, Image} from '@chakra-ui/react'
 import {ElemBg, textColor} from './style'
 
-export default function Country(){
+export default function Country({imgUrl, name, population, region, capital}){
   
 
   return (
     <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'
       bg={ElemBg}
-      color={textColor}>
+      color={textColor} >
+      <Box>
     <Image 
       fallbackSrc='https://via.placeholder.com/150' 
     
-      src='https://flagcdn.com/w320/au.png'
-      w="100%"/>
-      <Box p={6}>
+      src={imgUrl}
+      w="100%"
+      h="100%"
+      boxSizing="border-box"
+      />
+        </Box>
+      <Box p={4} w='100%' h="100%" >
         <Box
           mt='1'
           mb='3'
@@ -23,11 +28,11 @@ export default function Country(){
           noOfLines={1}
          
         >
-          Country
+          {name}
         </Box>
-        <Box>Population</Box>
-        <Box>Region</Box>
-        <Box>Capital</Box>
+        <Box noOfLines={1}>Population: {population}</Box>
+        <Box noOfLines={1}>Region: {region}</Box>
+        <Box noOfLines={1}>Capital: {capital}</Box>
       
       </Box>
     
