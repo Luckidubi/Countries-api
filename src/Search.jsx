@@ -9,13 +9,8 @@ import { useCountry } from './CountryProvider'
 export default function Search() {
 
   const { colorMode } = useColorMode()
-  const { searchCountries, clearSearch } = useCountry()
+  const { searchCountries, clearSearch, setShowHome } = useCountry()
   const [searchValue, setSearchValue] = useState('')
-  
-  
-  
-  
-
   
   
   const handleChange = (e) => { 
@@ -25,10 +20,12 @@ export default function Search() {
   
   useEffect(()=>{
     if (searchValue !== '') {
+      setShowHome(false);
       searchCountries(searchValue);
 
     } else if (searchValue === '') {
        clearSearch();
+      setShowHome(true)
     } 
   }, [searchValue])
 

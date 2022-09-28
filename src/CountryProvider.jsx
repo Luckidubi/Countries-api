@@ -3,44 +3,48 @@ import { v4 } from "uuid";
 import axios from "axios";
 
 
+
 const CountryContext = createContext()
 export const useCountry = () => useContext(CountryContext)
 
-const localState = JSON.parse(localStorage.getItem("countries"));
+// const localState = JSON.parse(localStorage.getItem("countrylist"));
 
 
 export default function CountryProvider({ children }) {
 
-  const [countries, setCountries] = useState(localState || [])
+  const [countries, setCountries] = useState([])
 
   const [searchResult, setSearchResult] = useState([])
+  console.log(countries)
+
+  const [showHome, setShowHome] = useState(true)
+
+  const searchCountries = (name) => {
+
+    setSearchResult(countries.filter(country => country.name.toLowerCase().includes(name.toLowerCase()) ? country : null))
+  }
+
+  const filterByRegion = (region) => {
+    countries && setSearchResult(countries.filter(country => country.region === region))
+   
+  }
 
   
-   const searchCountries = (name) => {
-     
-    setSearchResult(countries.filter(country => country.name.toLowerCase().includes(name.toLowerCase()) ? country : null))
-   }
-  
-  console.log(searchResult)
 
   const clearSearch = () => {
     setSearchResult(null)
-     // setCountries(countries)
+    // setShowHome(true)
   }
 
-  const addCountries = (data) => setCountries(prev => [
-    ...prev, {
-      data
-    }
-  ])
 
-  useEffect(() => {
-    localStorage.setItem('countries', JSON.stringify(countries));
-  }, [countries]);
+  // useEffect(() => {
+  //   if (!countries) return
+  //   localStorage.setItem('countrylist', JSON.stringify(countries));
+  // }, [countries]);
 
 
   useEffect(() => {
-
+   
     axios.get(`https://restcountries.com/v2/all`)
       .then(response => {
         console.log(response.data)
@@ -55,7 +59,7 @@ export default function CountryProvider({ children }) {
 
 
   return (
-    <CountryContext.Provider value={{ countries, addCountries, searchCountries, searchResult, clearSearch }}>
+    <CountryContext.Provider value={{ countries, searchCountries, searchResult, clearSearch, filterByRegion, setShowHome, showHome}}>
       {children}
     </CountryContext.Provider>
   )
