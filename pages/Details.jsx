@@ -129,7 +129,7 @@ export default function Details() {
               <Heading my={2}>{getId.name}</Heading>
               <Box>
                 <Box><Text noOfLines={1}><b>Native Name:</b> {' '}   {getId && getId.nativeName} </Text></Box>
-                <Box><Text noOfLines={1}><b>Population:</b>  {' '}  {getId && getId.population}</Text></Box>
+                <Box><Text noOfLines={1}><b>Population:</b>  {' '}  {getId && getId.population.toLocaleString()}</Text></Box>
                 <Box><Text noOfLines={1}><b>Region:</b>{' '} {getId && getId.region}</Text></Box>
                 <Box><Text noOfLines={1}><b>Sub Region:</b>{' '}  {getId && getId.subregion}</Text></Box>
                 <Box><Text noOfLines={1}><b>Capital:</b> {' '} {getId && getId.capital}</Text></Box>

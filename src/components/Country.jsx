@@ -13,6 +13,7 @@ export default function Country({ imgUrl, name, population, region, capital }) {
       bg={ElemBg}
       color={textColor}
       minH="100%"
+
     >
 
       <Box>
@@ -23,8 +24,8 @@ export default function Country({ imgUrl, name, population, region, capital }) {
           w="100%"
           h="100%"
 
-          objectFit="cover"
-          boxSizing="border-box"
+
+          
         />
       </Box>
       <Box p={4} w='100%' h="100%" >
