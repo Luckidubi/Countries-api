@@ -26,7 +26,7 @@ export default function CountryList() {
     <Header/>
     <Container maxW="1440px" h="100vh">
     <SearchFilter/>
-    <Grid templateColumns='repeat(auto-fit, minmax(240px, 1fr))' gap={12} my={4}>
+    <Grid templateColumns='repeat(auto-fit, minmax(240px, 1fr))' templateRows="auto" justifyItems="stretch" gap={12} my={4}>
 
       {
         

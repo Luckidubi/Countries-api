@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { v4 } from "uuid";
+
 import axios from "axios";
 
 
@@ -15,7 +15,7 @@ export default function CountryProvider({ children }) {
   const [countries, setCountries] = useState(localState || [])
 
   const [searchResult, setSearchResult] = useState([])
-  console.log(countries)
+
 
   const [showHome, setShowHome] = useState(true)
 
@@ -47,7 +47,7 @@ export default function CountryProvider({ children }) {
    
     axios.get(`https://restcountries.com/v2/all`)
       .then(response => {
-        console.log(response.data)
+       
         const data = response.data
 
 
@@ -64,10 +64,4 @@ export default function CountryProvider({ children }) {
     </CountryContext.Provider>
   )
 }
-
-// id: v4(),
-// {
-//   name, population, region, capital, topLevelDomain, alpha3Code, subregion, borders, nativeName, languages, currencies,
-//     flag
-// }
 
