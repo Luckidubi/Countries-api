@@ -1,6 +1,6 @@
 import { Select, Box} from '@chakra-ui/react'
-import {ElemBg, textColor} from './style'
-import {useCountry} from './CountryProvider'
+import {ElemBg, textColor} from '/src/style'
+import {useCountry} from '/src/CountryProvider'
 import {useState, useEffect} from 'react'
 
 export default function Filter(){

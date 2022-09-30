@@ -1,21 +1,22 @@
-import Header from "./Header"
-import Search from "./Search"
-import Filter from "./Filter"
-import SearchFilter from "./SearchFilter"
-import {Container} from '@chakra-ui/react'
-import CountryList from './CountryList'
-import Details from './Details'
+
+import CountryList from '/pages/CountryList'
+import Details from '/pages/Details'
+import {Routes, Route} from 'react-router-dom'
 
 export default function App() {
   return (
     <main>
-      
-     <Header/>
-      <Container maxW="1440px">
-      <SearchFilter/>
-      <CountryList/>
-        <Details/>
-        </Container>
+      <Routes>
+
+        <Route path="/" element={<CountryList/>}/>
+          
+
+        <Route path=":name" element={<Details/>}/>
+        
+         
+
+        </Routes>
+        
     </main>
   )
 }

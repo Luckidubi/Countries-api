@@ -2,8 +2,8 @@ import { Input, InputGroup, InputLeftElement, Box, FormControl } from '@chakra-u
 import { useState, useEffect } from "react"
 import { SearchIcon } from '@chakra-ui/icons'
 import { useColorMode } from '@chakra-ui/react'
-import { ElemBg } from './style'
-import { useCountry } from './CountryProvider'
+import { ElemBg } from '/src/style'
+import { useCountry } from '/src/CountryProvider'
 
 
 export default function Search() {

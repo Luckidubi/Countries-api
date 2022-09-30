@@ -7,12 +7,12 @@ import axios from "axios";
 const CountryContext = createContext()
 export const useCountry = () => useContext(CountryContext)
 
-// const localState = JSON.parse(localStorage.getItem("countrylist"));
+ const localState = JSON.parse(localStorage.getItem("countrylist"));
 
 
 export default function CountryProvider({ children }) {
 
-  const [countries, setCountries] = useState([])
+  const [countries, setCountries] = useState(localState || [])
 
   const [searchResult, setSearchResult] = useState([])
   console.log(countries)
@@ -37,10 +37,10 @@ export default function CountryProvider({ children }) {
   }
 
 
-  // useEffect(() => {
-  //   if (!countries) return
-  //   localStorage.setItem('countrylist', JSON.stringify(countries));
-  // }, [countries]);
+  useEffect(() => {
+    if (!countries) return
+    localStorage.setItem('countrylist', JSON.stringify(countries));
+  }, [countries]);
 
 
   useEffect(() => {
