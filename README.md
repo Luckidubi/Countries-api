@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github repo](https://github.com/Luckidubi/Countries-api)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live Site](https://countries-api-info.netlify.app/)
 
 ## My process
 ### Next task to do:
