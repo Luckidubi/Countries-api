@@ -28,7 +28,7 @@ export default function Filter(){
         boxShadow="md" color={textColor} 
         focusBorderColor={ElemBg} 
         placeholder='Filter by Region'
-        value={console.log(filterValue)}
+        value={filterValue}
         onChange={handleChange}
         onBlur = {handleChange}
         >

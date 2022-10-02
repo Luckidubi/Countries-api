@@ -2,7 +2,7 @@ import { Box, Flex, Image, Heading, Button, Text } from '@chakra-ui/react'
 import { ArrowBackIcon } from '@chakra-ui/icons'
 import { ElemBg, textColor } from '/src/style.jsx'
 import Header from '/src/components/Header'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useCountry } from '/src/CountryProvider'
 import { useNavigate } from 'react-router-dom'
 
@@ -35,17 +35,6 @@ export default function Details() {
   }
 
 
-  // const getCountryBorders = () => {
-  //    let borders = getId.borders
-  //   console.log(borders)
-  //   if (isLoading) return <Text>No Border found</Text>;
-  //   const countryBorders = countries.filter(country => borders.includes(country.cioc))
-
-  //   return countryBorders
-
-
-  // }
-
   const getBorder = () => {
     let getBorders = getId.borders
 
@@ -67,7 +56,7 @@ export default function Details() {
     const display = list && list.map(item => {
       return (
 
-        <Button onClick={() => navigate(`/${item}`)} m={{ sm: 4 }} py={2} cursor="pointer" overflow="hidden" textAlign={['left', 'center']} fontSize='sm' key={item} whitespace="nowrap" variant='outline' boxShadow="md" px={{ sm: "4em" }} w={{ sm: '6em', md: '8em' }} ml={2} my={2} _hover={{ boxShadow: 'md' }}>
+        <Button onClick={() => navigate(`/${item}`)} m={{ sm: 4 }} py={2} cursor="pointer" overflow="hidden" textAlign={['left', 'center']} fontSize='sm' key={item} whitespace="nowrap" variant='outline' boxShadow="md" px={{ sm: "4em" }} ml={2} my={2} _hover={{ boxShadow: 'md' }} textOverflow="ellipsis">
 
           {item}
 
@@ -85,7 +74,7 @@ export default function Details() {
   return (
     <>
       <Header />
-      <Box p={4} maxW="100%" bg={ElemBg} color={textColor} h="100vh">
+      <Box p={4} maxW="100%" bg={ElemBg} color={textColor} h="100vh" mb={4}>
         <Flex >
           <Box m={2} my={6}>
             <Button onClick={() => navigate(-1)} variant="outline" leftIcon={<ArrowBackIcon boxSize={5} />} w="6em">
@@ -109,8 +98,7 @@ export default function Details() {
               flexShrink={0}
               maxH={350}
               maxW={470}
-            // w="100%"
-            // h="100%"
+            
             />
           </Box>
 
@@ -146,20 +134,16 @@ export default function Details() {
             </Box>
 
 
-
-
           </Box>
 
 
-
         </Flex>
-        <Box display={{ sm: "block", md: "flex" }} alignItems='center' flexWrap="wrap" ml={{ md: 2 }} my={{ sm: 6 }} mt={3}>
+        
+        
+        <Box  display={{ sm: "block", md: "flex" }} alignItems='center' flexWrap="wrap" ml={{ md: 2 }} my={{ sm: 6 }} mt={3} mb={4}>
           <Text as='b'>Border Countries:</Text>{' '} {getBorder()}
         </Box>
-
-
-
-
+    
       </Box>
     </>
   )

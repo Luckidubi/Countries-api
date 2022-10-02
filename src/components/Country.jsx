@@ -23,7 +23,7 @@ export default function Country({ imgUrl, name, population, region, capital }) {
           src={imgUrl}
           w="100%"
           h="100%"
-
+          alt={name}
 
           
         />
